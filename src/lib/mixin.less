@@ -1,0 +1,33 @@
+.respond(@width; @rules) when ( @width = xl ) {
+  @media (min-width: 1200px) {
+    @rules();
+  }
+}
+/*
+    USE FOR media min-width 1200px:
+    .respond(xl; {
+        style here
+    });
+*/
+
+.respond(@width; @rules) when ( @width = l ) {
+  @media (min-width: 1000px) and (max-width: 1199px) {
+    @rules();
+  }
+}
+/*
+    USE FOR media max-width 1199px
+    .respond(l; {
+        style here
+    });
+*/
+
+.dynamicFont(@fontMobile, @fontDesktop) {
+  @media (min-width: 1000px) {
+    font-family: @fontDesktop;
+  }
+
+  @media (max-width: 999px) {
+    font-family: @fontMobile;
+  }
+}
